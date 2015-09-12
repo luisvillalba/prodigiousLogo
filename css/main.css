@@ -1,0 +1,105 @@
+/* Borders */
+/* corners */
+/* Utilities */
+/** 
+ * Returns the next rotation degree based on the current one 
+*/
+.container {
+  height: 700px;
+  width: 700px;
+  /* Gives color to each of the borders */
+  /* Sets the position of each border and its rotation */
+  /* Sets the position of each corner and its rotation */ }
+  .container h1 {
+    font-weight: lighter;
+    font-size: 150px;
+    left: 300px;
+    position: absolute;
+    top: -60px; }
+  .container .circle {
+    border: 40px solid;
+    border-radius: 50%;
+    height: 200px;
+    position: absolute;
+    right: 0px;
+    top: -90px;
+    width: 200px; }
+  .container .circle-wrapper {
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    width: 45px;
+    border-radius: 25px; }
+  .container .circle-wrapper.red div {
+    border-color: #ef4323; }
+  .container .circle-wrapper.purple div {
+    border-color: #b5208e; }
+  .container .circle-wrapper.blue div {
+    border-color: #11b6e0; }
+  .container .circle-wrapper.green div {
+    border-color: #8ec642; }
+  .container .circle-wrapper.orange div {
+    border-color: #f79622; }
+  .container .circle-wrapper.red {
+    top: 80px;
+    left: 100px;
+    transform: rotate(0deg); }
+  .container .circle-wrapper.purple {
+    top: 27px;
+    left: 142px;
+    transform: rotate(72deg); }
+  .container .circle-wrapper.blue {
+    top: 51px;
+    left: 206px;
+    transform: rotate(144deg); }
+  .container .circle-wrapper.green {
+    top: 120px;
+    left: 201px;
+    transform: rotate(216deg); }
+  .container .circle-wrapper.orange {
+    top: 136px;
+    left: 136px;
+    transform: rotate(288deg); }
+  .container .corner {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50% 0 50%;
+    position: absolute; }
+  .container .corner:before {
+    background-color: #fff;
+    border-radius: 50%;
+    bottom: 12px;
+    content: " ";
+    display: block;
+    height: 20px;
+    left: 12px;
+    top: 12px;
+    position: absolute;
+    width: 20px; }
+  .container .corner.red-purple {
+    background-color: #982347;
+    top: 63px;
+    left: 95px;
+    transform: rotate(-7deg); }
+  .container .corner.purple-blue {
+    background-color: #573189;
+    top: 35px;
+    left: 183px;
+    transform: rotate(65deg); }
+  .container .corner.blue-green {
+    background-color: #0f9562;
+    top: 112px;
+    left: 236px;
+    transform: rotate(137deg); }
+  .container .corner.green-orange {
+    background-color: #d46c29;
+    top: 185px;
+    left: 179px;
+    transform: rotate(209deg); }
+  .container .corner.orange-red {
+    background-color: #ba2025;
+    top: 154px;
+    left: 93px;
+    transform: rotate(281deg); }
+
+/*# sourceMappingURL=main.css.map */

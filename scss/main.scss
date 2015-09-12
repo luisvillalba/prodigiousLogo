@@ -1,0 +1,108 @@
+/* Borders */
+$colors-list: (#ef4323, #b5208e, #11b6e0, #8ec642, #f79622);
+$colors-names: ("red", "purple", "blue", "green", "orange");
+$positions: (80px 100px, 27px 142px , 51px 206px, 120px 201px, 136px 136px);
+
+/* corners */
+$corners: ("red-purple", "purple-blue", "blue-green", "green-orange", "orange-red");
+$corners-colors: (#982347, #573189, #0f9562, #d46c29, #ba2025);
+$corners-positions: (63px 95px, 35px 183px , 112px 236px, 185px 179px, 154px 93px);
+
+/* Utilities */
+
+/** 
+ * Returns the next rotation degree based on the current one 
+*/
+@function getRotation($current) {
+    $next: $current + 72;
+    @return $next;
+}
+
+.container {
+    $rotation: 0;
+    $cornerRotation: -7;
+    height: 700px;
+    width: 700px;
+    
+    h1 {
+        font-weight: lighter;
+        font-size: 150px;
+        left: 300px;
+        position: absolute;
+        top: -60px;
+    }
+    
+    .circle {
+        border: 40px solid;
+        border-radius: 50%;
+        height: 200px;
+        position: absolute;
+        right: 0px;
+        top: -90px;
+        width: 200px;
+    }
+
+    .circle-wrapper {
+        height: 100px;
+        overflow: hidden;
+        position: absolute;
+        width: 45px;
+        border-radius: 25px;
+    }
+    
+    /* Gives color to each of the borders */
+    @each $color in $colors-list {
+        $i: index($colors-list, $color);
+
+        .circle-wrapper.#{nth($colors-names, $i)} div {
+            border-color: $color;
+        }
+    }
+
+    /* Sets the position of each border and its rotation */
+    @each $color in $colors-names {
+        $i: index($colors-names, $color);
+
+        .circle-wrapper.#{nth($colors-names, $i)} {
+            top: nth(nth($positions, $i), 1);
+            left: nth(nth($positions, $i), 2);
+            transform: rotate(#{$rotation}deg);
+        }
+
+        $rotation: getRotation($rotation);
+    }
+    
+    .corner {
+        width: 45px;
+        height: 45px;
+        border-radius: 50% 50% 0 50%;
+        position: absolute;
+    }
+    
+    .corner:before {
+        background-color: #fff;
+        border-radius: 50%;
+        bottom: 12px;
+        content: " ";
+        display: block;
+        height: 20px;
+        left: 12px;
+        top: 12px;
+        position: absolute;
+        width: 20px;
+    }
+    
+    /* Sets the position of each corner and its rotation */
+    @each $corner in $corners {
+        $i: index($corners, $corner);
+
+        .corner.#{nth($corners, $i)} {
+            background-color: nth($corners-colors, $i);
+            top: nth(nth($corners-positions, $i), 1);
+            left: nth(nth($corners-positions, $i), 2);
+            transform: rotate(#{$cornerRotation}deg);
+        }
+
+        $cornerRotation: getRotation($cornerRotation);
+    }
+}
