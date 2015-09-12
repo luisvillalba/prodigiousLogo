@@ -16,29 +16,30 @@
     left: 300px;
     position: absolute;
     top: -60px; }
-  .container .circle {
-    border: 40px solid;
-    border-radius: 50%;
-    height: 200px;
-    position: absolute;
-    right: 0px;
-    top: -90px;
-    width: 200px; }
   .container .circle-wrapper {
     height: 100px;
     overflow: hidden;
     position: absolute;
     width: 45px;
     border-radius: 25px; }
-  .container .circle-wrapper.red div {
+  .container .circle-wrapper:before {
+    border: 40px solid;
+    border-radius: 50%;
+    content: " ";
+    height: 200px;
+    position: absolute;
+    right: 0px;
+    top: -90px;
+    width: 200px; }
+  .container .circle-wrapper.red:before {
     border-color: #ef4323; }
-  .container .circle-wrapper.purple div {
+  .container .circle-wrapper.purple:before {
     border-color: #b5208e; }
-  .container .circle-wrapper.blue div {
+  .container .circle-wrapper.blue:before {
     border-color: #11b6e0; }
-  .container .circle-wrapper.green div {
+  .container .circle-wrapper.green:before {
     border-color: #8ec642; }
-  .container .circle-wrapper.orange div {
+  .container .circle-wrapper.orange:before {
     border-color: #f79622; }
   .container .circle-wrapper.red {
     top: 80px;

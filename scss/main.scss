@@ -31,16 +31,6 @@ $corners-positions: (63px 95px, 36px 184px , 112px 236px, 185px 179px, 154px 93p
         position: absolute;
         top: -60px;
     }
-    
-    .circle {
-        border: 40px solid;
-        border-radius: 50%;
-        height: 200px;
-        position: absolute;
-        right: 0px;
-        top: -90px;
-        width: 200px;
-    }
 
     .circle-wrapper {
         height: 100px;
@@ -50,11 +40,22 @@ $corners-positions: (63px 95px, 36px 184px , 112px 236px, 185px 179px, 154px 93p
         border-radius: 25px;
     }
     
+    .circle-wrapper:before {
+        border: 40px solid;
+        border-radius: 50%;
+        content: " ";
+        height: 200px;
+        position: absolute;
+        right: 0px;
+        top: -90px;
+        width: 200px;
+    }
+    
     /* Gives color to each of the borders */
     @each $color in $colors-list {
         $i: index($colors-list, $color);
 
-        .circle-wrapper.#{nth($colors-names, $i)} div {
+        .circle-wrapper.#{nth($colors-names, $i)}:before {
             border-color: $color;
         }
     }
